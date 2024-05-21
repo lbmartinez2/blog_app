@@ -9,19 +9,19 @@
       </ul>
     <% end %>
   </p>
-
+  <h1>Write a new Article</h1>
   <p>
     <%= f.label :name %> <br/>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class:"form-control" %>
   </p>
 
   <p>
     <%= f.label :body %> <br/>
-    <%= f.text_field :body %>
+    <%= f.text_field :body, class:"form-control" %>
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit class:"btn btn-secondary" %>
   </p>
 
 <% end %>
