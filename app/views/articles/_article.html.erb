@@ -1,0 +1,17 @@
+
+
+<div id="<%= dom_id article %>" class="card">
+<div class="card-header">
+    <h3 ><%= article.title %></h3>
+</div>
+<div class="card-body">
+    <p class="card-subtitle">
+        <figcaption class="blockquote-footer">
+            <%= article.created_at.in_time_zone('Asia/Manila').strftime("%B %d, %Y, %I:%M %p")%>
+        </figcaption>
+    </p>
+    <p class="card-text">
+        <%= article.content %>
+    </p>
+</div>
+</div>
