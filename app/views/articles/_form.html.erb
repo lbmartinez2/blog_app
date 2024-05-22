@@ -12,13 +12,13 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <% form.label :title, style: "display: block" %>
+    <%= form.text_field :title, class:"form-control w-100", placeholder:"Title" %>
   </div>
-
+<br>
   <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_field :content, autocomplete: "off" %>
+    <% form.label :content, style: "display: block" %>
+    <%= form.text_area :content, rows: 10, class:"form-control w-100", autocomplete: "off", placeholder:"Write something here..." %>
   </div>
 <br>
   <div>

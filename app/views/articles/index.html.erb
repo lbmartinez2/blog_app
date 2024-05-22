@@ -1,12 +1,22 @@
 
 
 <div id="articles">
-  <% @articles.each do |article| %>
-    <%= render article %>
-    <p>
-      <%= link_to "Show this article", article, class:"link-secondary link-underline link-underline-opacity-0 link-underline-opacity-75-hover" %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New article", new_article_path, class:"btn btn-success" %>
+    <% if @articles.any? %>
+        <% @articles.each do |article| %>
+            <%= render article %>
+              <figure class="text-end">
+                  <blockquote class="blockquote">
+                      <p></p>
+                  </blockquote>
+                  <figcaption class="blockquote-footer">
+                      <%= link_to "Show this article", article, class: "link-secondary link-underline link-underline-opacity-0 link-underline-opacity-75-hover" %>
+                  </figcaption>
+              </figure>
+        <% end %>
+    <% else %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <h5><strong>Oh no!</strong> No articles were found with the title "<strong><%= params[:search] %></strong>".</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <% end %>
+  </div>
